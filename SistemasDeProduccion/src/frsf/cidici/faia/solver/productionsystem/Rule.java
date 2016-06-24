@@ -6,8 +6,8 @@ package frsf.cidici.faia.solver.productionsystem;
  */
 public abstract class Rule {
 	
-	Object condition;
-	Object then;
+	String condition;
+	String then;
 	int id;
 	int specificity;
 	int priority;
@@ -60,7 +60,7 @@ public abstract class Rule {
 	}
 	
 	public void setCondition(Object o){
-		condition = o;
+		//condition = o;
 	}
 	
 	public Object getCondition(){
@@ -68,7 +68,7 @@ public abstract class Rule {
 	}
 	
 	public void setThen(Object t){
-		then = t;
+		//then = t;
 	}
 	
 	public Object getThen(){

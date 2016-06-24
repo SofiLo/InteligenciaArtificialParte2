@@ -3,7 +3,7 @@ package frsf.ia.tp.chatbot.solver.productionsystem;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import frsf.cidici.faia.chatBot.Frase;
+import frsf.cidici.faia.chatBot.Palabra;
 import frsf.cidici.faia.chatBot.Oracion;
 import frsf.cidici.faia.chatBot.Regla;
 import frsf.cidici.faia.solver.productionsystem.Criteria;
@@ -34,7 +34,7 @@ public class ChatbotProductionSystem extends ProductionSystem{
 		LinkedList<PeerRuleData> ret = new LinkedList<PeerRuleData>();
 		for(Iterator<Regla> i = matcheo.iterator();i.hasNext();)
 		{
-			if(perc==null) perc = new Frase();
+			if(perc==null) perc = new Palabra();
 			PeerRuleData pdr = new PeerRuleData(i.next(),perc);
 			ret.add(pdr);
 		}
