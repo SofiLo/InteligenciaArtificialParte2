@@ -16,6 +16,14 @@ public class Diccionario {
 	ArrayList<String> Ver = new ArrayList<String>();
 	ArrayList<String> Encontrar = new ArrayList<String>();
 	
+	//DICCIONARIO DE MATERIAS
+	ArrayList<String> Materias = new ArrayList<String>();
+	
+	//DICCIONARIO PERSONAS: DOCENTES..
+	ArrayList<String> Persona = new ArrayList<String>();
+	
+	
+	
 	//HAY QUE AGREGAR MÁS PUSE SOLO ALGUNAS
 	//EN CUANTO APAREZCAN EN LAS FRASES DEL USUARIO VAMOS AGREGANDO Y MEJORANDO EL DICCIONARIO
 	public Diccionario(){
@@ -43,10 +51,59 @@ public class Diccionario {
 		Hacer.add("haces");
 		Hacer.add("hiciste");
 		
+		Encontrar.add("encontrar");
+		Encontrar.add("encuentro");
+		Encontrar.add("encuentra");
+		Encontrar.add("encontramos");
+		
+		Hacer.add("hacer");
+		Hacer.add("haciendo");
+		Hacer.add("haces");
+		Hacer.add("acelga");
+		
+		Ir.add("ir");
+		Ir.add("voy");
+		Ir.add("vamos");
+		Ir.add("llego");
+		
+		Querer.add("querer");
+		Querer.add("quiero");
+		Querer.add("queremos");
+		
+		Ver.add("ver");
+		Ver.add("vemos");
+		Ver.add("veremo");
+		Ver.add("lovemo");
+		
+		Cursar.add("cursar");
+		Cursar.add("cursa");
+		Cursar.add("cursamos");
+		Cursar.add("cursas");
+		
+		Rendir.add("rinde");
+		Rendir.add("rendir");
+		Rendir.add("rendimos");
+		
 		Llamar.add("llamar");
 		Llamar.add("llamas");
 		Llamar.add("llama");
 		
+		Materias.add("sistemas de gestion");
+		Materias.add("inteligencia artificial");
+		Materias.add("redes");
+		Materias.add("ontologias");
+		Materias.add("analisis matematico ii");
+		
+		Persona.add("milagros gutierrez");
+		Persona.add("jorge roa");
+		Persona.add("ignacio gomes");
+		Persona.add("laura caliusco");
+		Persona.add("susana romaniz");
+		Persona.add("alfonso gimenez uribe");
+		Persona.add("juan carlos ramos");
+		Persona.add("pablo villareal");
+		Persona.add("leandro taravini");
+		Persona.add("sonia pastorelli");
 				
 	}
 }
