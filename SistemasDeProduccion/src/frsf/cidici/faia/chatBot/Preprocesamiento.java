@@ -10,23 +10,14 @@ public class Preprocesamiento {
 	}
 	/* En vez de main es: public void procesamiento(String original). Solo está el main
 	 * para poder ejecutar y probarlo*/
-	public static void main(String[] args){
+	/*public static void main(String[] args){*/
+	public ArrayList<String> procesamiento(String original){
 		
-		//Esta sería la oración que nos escriba el usuairo
-		String original = "donde se cursa diseño de sistemas ?";
-		
-		//En el separador se guarda la oracion en minuscula y separada por palabra.
-		//Queda un arreglo de palabras
-		String[] separador = original.toLowerCase().split(" ");
-		
-		/* normalizada es la oracion normalizada/parseada. Por ejemplo si el usuario ingresa: 
-		 * "Donde encuentro a Fulanita??" en normalizada guardo "Donde encontrar Persona"*/
+		/*String original = "Como encuentro , a Milagros Guitierrez ?";*/
 		ArrayList<String> normalizada = new ArrayList<String>();
-		
 		Diccionario dic = new Diccionario();
-		ArrayList<String> separadas = new ArrayList<String>();
-		//Para imprimir
-		System.out.println("Array separador: ");
+		ArrayList<String> separadas = new ArrayList<String>();		
+		String[] separador = original.toLowerCase().split(" ");
 		
 		//saco los signos de puntuación
 		for(int i=0; i<separador.length; i++)
@@ -39,7 +30,7 @@ public class Preprocesamiento {
 		while(iter.hasNext()) {
 			String palabra = iter.next();
 			if(dic.Cursar.contains(palabra) || dic.Rendir.contains(palabra)) {
-				System.out.println(palabra);
+				//System.out.println(palabra);
 				break;
 			}
 		}
@@ -60,16 +51,25 @@ public class Preprocesamiento {
 		while(iter.hasNext())
 			persona = persona.concat(iter.next());
 		
-		
-		/*Este for recorre el arreglo separador y busca si coincide con las palabras sinonimos. Para normalizar y pasar
-		 * a infinitivo y palabras comunes/claves*/
 		for(String palabra : separador){
-			if(dic.Andar.contains(palabra)){
+			if(dic.SaludoBienv.contains(palabra)){
+				normalizada.add(dic.SaludoBienv.get(0));
+			}else if(dic.SaludoDesp.contains(palabra)){
+				normalizada.add(dic.SaludoDesp.get(0));
+			}else if(dic.Cuando.equals(palabra)){
+				normalizada.add(dic.Cuando);
+			}else if(dic.Donde.equals(palabra)){
+				normalizada.add(dic.Donde);
+			}else if(dic.Cual.equals(palabra)){
+				normalizada.add(dic.Cual);
+			}else if(dic.Andar.contains(palabra)){
 				normalizada.add(dic.Andar.get(0));
 			}else if(dic.Cursar.contains(palabra)){
 				normalizada.add(dic.Cursar.get(0));
+				normalizada.add(materia);
 			}else if(dic.Encontrar.contains(palabra)){
 				normalizada.add(dic.Encontrar.get(0));
+				normalizada.add(persona);
 			}else if(dic.Estar.contains(palabra)){
 				normalizada.add(dic.Estar.get(0));
 			}else if(dic.Hacer.contains(palabra)){
@@ -84,13 +84,16 @@ public class Preprocesamiento {
 				normalizada.add(dic.Rendir.get(0));
 			}else if(dic.Ver.contains(palabra)){
 				normalizada.add(dic.Ver.get(0));
-			}
-			
+			}else if(dic.Como.equals(palabra)){
+				normalizada.add(dic.Como);	
+			}		
 		}
-		System.out.println();
+		/*System.out.println();
 		System.out.println("Array normalizada: ");
 		for(int i=0; i<normalizada.size(); i++)
-			System.out.print(normalizada.get(i)+" ");
+			System.out.print(normalizada.get(i)+" ");*/
+		
+		return normalizada;
 	}
 	
 }

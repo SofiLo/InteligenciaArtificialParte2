@@ -3,7 +3,7 @@ package frsf.ia.tp.chatbot.solver.productionsystem;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import frsf.cidici.faia.chatBot.Palabra;
+import frsf.cidici.faia.chatBot.Frase;
 import frsf.cidici.faia.chatBot.Oracion;
 import frsf.cidici.faia.chatBot.Regla;
 import frsf.cidici.faia.solver.productionsystem.Criteria;
@@ -21,9 +21,9 @@ import frsf.cidici.faia.solver.productionsystem.ProductionSystem;
 public class ChatbotProductionSystem extends ProductionSystem{
 
 	LinkedList<Regla> matcheo;
-	Oracion perc; //Es lo que me ingresa el usuario por pantalla (CREEMOS)
+	String perc; 
 	
-	public ChatbotProductionSystem(LinkedList<Criteria> s, LinkedList<Regla> m,Oracion o) {
+	public ChatbotProductionSystem(LinkedList<Criteria> s, LinkedList<Regla> m,String o) {
 		super(s);
 		matcheo = m;
 		perc = o;
@@ -34,10 +34,13 @@ public class ChatbotProductionSystem extends ProductionSystem{
 		LinkedList<PeerRuleData> ret = new LinkedList<PeerRuleData>();
 		for(Iterator<Regla> i = matcheo.iterator();i.hasNext();)
 		{
-			if(perc==null) perc = new Palabra();
+			
+			if(perc==null) perc = " new Frase()";
 			PeerRuleData pdr = new PeerRuleData(i.next(),perc);
+			System.out.println("entro al for");
 			ret.add(pdr);
 		}
+		System.out.println(ret);
 		return ret;
 	}
 	

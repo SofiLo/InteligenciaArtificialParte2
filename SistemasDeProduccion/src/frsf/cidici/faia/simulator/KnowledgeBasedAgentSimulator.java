@@ -10,6 +10,7 @@ import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
 import frsf.cidisi.faia.simulator.events.EventType;
 import frsf.cidisi.faia.simulator.events.SimulatorEventNotifier;
+import frsf.cidisi.faia.state.EnvironmentState;
 
 /**
  * Clase que implementa el simulador de un agente basado en conocimiento.
@@ -59,17 +60,19 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
 
             System.out.println("Sending perception to agent...");
             perception = this.getPercept();
-            agent.see(perception);
+            //agent.see(perception);
             System.out.println("Perception: " + perception);
 
-            System.out.println("Agent State: " + agent.getAgentState());
-            System.out.println("Environment: " + environment);
+         //   System.out.println("Agent State: " + agent.getAgentState());
+           // System.out.println("Environment: " + environment);
 
             System.out.println("Asking the agent that start the learning process...");
             action = agent.learn();
 
-            if (action == null)
+            if (action == null){
             	System.out.println("\nRule to execute: None");
+            	break;
+            }
             else
             {
             	ProductionSystemAction act = (ProductionSystemAction) action;
@@ -106,7 +109,7 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
 
 	protected boolean finishForRule(Action action) {
 		// TODO Futuro: Ver como deberá ser este método
-		return false;
+		return action!=null;
 	}
 	
 	public String getSimulatorName() {
@@ -121,6 +124,9 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
     }
     
     protected void updateState(Action action) {
+    	
+    	//ACA CAMBIE getAgentState() por getChatbotState(). CAMBIAR SI NO SIRVE
+
     	//TODO Futuro: Esta hecho para el ChatBot pero debería incluirse en otro lugar el metodo requerido.
         this.getEnvironment().updateState(((ChatbotAgent) agents.elementAt(0)).getAgentState(), action);
     }

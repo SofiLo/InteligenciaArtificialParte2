@@ -59,19 +59,19 @@ public abstract class Rule {
 		type = t;
 	}
 	
-	public void setCondition(Object o){
-		//condition = o;
+	public void setCondition(String o){
+		condition = o;
 	}
 	
-	public Object getCondition(){
+	public String getCondition(){
 		return condition;
 	}
 	
-	public void setThen(Object t){
-		//then = t;
+	public void setThen(String t){
+		then = t;
 	}
 	
-	public Object getThen(){
+	public String getThen(){
 		return then;
 	}
 	

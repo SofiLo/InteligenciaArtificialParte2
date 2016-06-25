@@ -15,6 +15,13 @@ public class Diccionario {
 	ArrayList<String> Rendir = new ArrayList<String>();
 	ArrayList<String> Ver = new ArrayList<String>();
 	ArrayList<String> Encontrar = new ArrayList<String>();
+	ArrayList<String> SaludoBienv = new ArrayList<String>();
+	ArrayList<String> SaludoDesp = new ArrayList<String>();
+	
+	String Como = "como";
+	String Cual = "cual";
+	String Donde =  "donde";
+	String Cuando = "cuando";
 	
 	//DICCIONARIO DE MATERIAS
 	ArrayList<String> Materias = new ArrayList<String>();
@@ -31,6 +38,7 @@ public class Diccionario {
 		Andar.add("anda");
 		Andar.add("andan");
 		Andar.add("andas");
+		Andar.add("andas?");
 		Andar.add("andamos");
 		
 		Estar.add("estar");//SIEMPRE EN EL PRIMER ELEMENTO VA EL INFINITIVO
@@ -38,6 +46,7 @@ public class Diccionario {
 		Estar.add("estan");
 		Estar.add("estas");
 		Estar.add("estamos");
+		Estar.add("estas?");
 		
 		Ser.add("ser");
 		Ser.add("somos");
@@ -50,16 +59,13 @@ public class Diccionario {
 		Hacer.add("hacias");
 		Hacer.add("haces");
 		Hacer.add("hiciste");
+		Hacer.add("haciendo");
+		Hacer.add("acelga");
 		
 		Encontrar.add("encontrar");
 		Encontrar.add("encuentro");
 		Encontrar.add("encuentra");
 		Encontrar.add("encontramos");
-		
-		Hacer.add("hacer");
-		Hacer.add("haciendo");
-		Hacer.add("haces");
-		Hacer.add("acelga");
 		
 		Ir.add("ir");
 		Ir.add("voy");
@@ -80,13 +86,21 @@ public class Diccionario {
 		Cursar.add("cursamos");
 		Cursar.add("cursas");
 		
-		Rendir.add("rinde");
 		Rendir.add("rendir");
+		Rendir.add("rinde");
 		Rendir.add("rendimos");
 		
 		Llamar.add("llamar");
 		Llamar.add("llamas");
 		Llamar.add("llama");
+		
+		SaludoBienv.add("hola");
+		SaludoBienv.add("buenas");
+		SaludoBienv.add("buen");
+		
+		SaludoDesp.add("chau");
+		SaludoDesp.add("adios");
+		SaludoDesp.add("vemos");
 		
 		Materias.add("sistemas de gestion");
 		Materias.add("inteligencia artificial");

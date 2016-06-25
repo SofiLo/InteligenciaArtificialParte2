@@ -29,7 +29,7 @@ public class ProductionSystem extends Solve{
 	}
 
 	@Override
-	public Action solve(Object[] params) throws Exception {
+	public Action solve(Object[] params){
 
 		PeerRuleData r;
 		
@@ -37,7 +37,6 @@ public class ProductionSystem extends Solve{
 		{
 			//Se obtienen las reglas activas
 			LinkedList<PeerRuleData> activeRules = this.match();
-			
 			//Si no hay reglas activas se termina.
 			if(activeRules.isEmpty()) return null;
 			
@@ -53,7 +52,7 @@ public class ProductionSystem extends Solve{
         			System.out.print("Reglas en Conflicto: ");
                 	for(Iterator<PeerRuleData> j = finalRules.iterator(); j.hasNext();)
                 	{
-                		System.out.print("(" + j.next().getRule().getId().toString() + ") ");
+                		System.out.print("(R" + j.next().getRule().getId().toString() + ") ");
                 	}
         			activeRules = finalRules;
         			if(activeRules.size()==1) break;
