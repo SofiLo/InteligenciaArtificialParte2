@@ -24,7 +24,7 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 		respuestaAgente = "Benvenuto";	
 		
 		r1.setId(1);
-		r1.setCondition("hola");
+		r1.setCondition("[hola]");
 		r1.setThen("Hola, en que puedo ayudarlo?");
 		r1.setType(0);
 		r1.setNovelty(1);
@@ -33,7 +33,7 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 		listaReglas.add(r1);
 		
 		r2.setId(2);
-		r2.setCondition("chau");
+		r2.setCondition("[chau]");
 		r2.setThen("Chau");
 		r2.setType(0);
 		r2.setNovelty(0);

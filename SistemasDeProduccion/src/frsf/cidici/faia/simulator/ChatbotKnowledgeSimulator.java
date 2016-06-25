@@ -44,7 +44,7 @@ public class ChatbotKnowledgeSimulator extends KnowledgeBasedAgentSimulator{
         action = agent.learn();
 
         if (action == null){
-         	System.out.println("\nRule to execute: None");
+         	System.out.println("\nNo entiendo.");
         }
         else
         {

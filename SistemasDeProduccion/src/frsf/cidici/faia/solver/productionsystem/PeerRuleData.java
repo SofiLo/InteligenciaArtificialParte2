@@ -7,9 +7,9 @@ package frsf.cidici.faia.solver.productionsystem;
 public class PeerRuleData {
 	
 	Rule rule;
-	Object data;
+	String data;
 	
-	public PeerRuleData(Rule r,Object d){
+	public PeerRuleData(Rule r,String d){
 		rule = r;
 		data = d;
 	}
@@ -22,11 +22,11 @@ public class PeerRuleData {
 		rule = r;
 	}
 	
-	public Object getData(){
+	public String getData(){
 		return data;
 	}
 	
-	public void setData(Object d){
+	public void setData(String d){
 		data = d;
 	}
 	
