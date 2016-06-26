@@ -13,13 +13,6 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 	public static LinkedList<Regla> listaReglas;
 	String respuestaAgente;
 	
-	Regla r1 = new Regla();
-	Regla r2 = new Regla();
-	Regla r3 = new Regla();
-	Regla r4 = new Regla();
-	Regla r5 = new Regla();
-	Regla r6 = new Regla();
-		
 	@Override
 	public void initState() {
 
@@ -27,52 +20,37 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 		listaReglas = new LinkedList<Regla>();
 		respuestaAgente = "Benvenuto";	
 		
-		r1.setId(1);
-		r1.setCondition("[hola]");
-		r1.setThen("Hola, en que puedo ayudarlo?");
-		r1.setType(0);
-		r1.setNovelty(1);
-		r1.setPriority(1);
-		r1.setSpecificity(1);
-		listaReglas.add(r1);
+		listaReglas.add(setRules(1, "[SaludoBienv]", "Hola, en que puedo ayudarlo?", 0, 1, 1, 1));
+		listaReglas.add(setRules(2, "[SaludoDesp]", "Chau", 0, 1, 1, 1));
+		listaReglas.add(setRules(3, "[ComoAndar]", "Bárbaro y vos?", 0, 1, 1, 1));
+		listaReglas.add(setRules(4, "[SaludoBienv, ComoAndar]", "Hola! Bárbaro y vos?", 0, 1, 1, 1));
 		
-		r2.setId(2);
-		r2.setCondition("[chau]");
-		r2.setThen("Chau");
-		r2.setType(0);
-		r2.setNovelty(0);
-		r2.setPriority(0);
-		r2.setSpecificity(0);
-		listaReglas.add(r2);
+		listaReglas.add(setRules(5, "[DondeEstar, Milagros]", "En las islas canarias", 0, 1, 1, 1));
+		listaReglas.add(setRules(6, "[DondeEstar, Susana]", "En la oficina con los becarios", 0, 1, 1, 1));
+		listaReglas.add(setRules(7, "[DondeEstar, Jorge]", "En el Anexo", 0, 1, 1, 1));
+		listaReglas.add(setRules(8, "[DondeEstar, Ignacio]", "En el CIDISI", 0, 1, 1, 1));
+		listaReglas.add(setRules(9, "[DondeEstar, Laura]", "En la Secretaria de Relaciones Internacionales", 0, 1, 1, 1));
+		listaReglas.add(setRules(10, "[DondeEstar, Alfonso]", "En la Secretaría Académica", 0, 1, 1, 1));
+		listaReglas.add(setRules(11, "[DondeEstar, Ramos]", "En TICs", 0, 1, 1, 1));
+		listaReglas.add(setRules(12, "[DondeEstar, Villarreal]", "En el CIDISI", 0, 1, 1, 1));
+		listaReglas.add(setRules(13, "[DondeEstar, Taravini]", "En la Secretaría de Deportes", 0, 1, 1, 1));
+		listaReglas.add(setRules(14, "[DondeEstar, Pastorelli]", "En el Departamento de Materias Básicas", 0, 1, 1, 1));
 		
-		r3.setId(3);
-		r3.setCondition("[como, estar]");
-		r3.setThen("Bárbaro y vos?");
-		r3.setType(0);
-		r3.setNovelty(1);
-		r3.setPriority(1);
-		r3.setSpecificity(1);
-		listaReglas.add(r3);
+		listaReglas.add(setRules(15, "[DondeRindo, SistemasGestion]", "En el Aula MM5 (Multimedios 5)", 0, 1, 1, 1));
+		listaReglas.add(setRules(16, "[DondeRindo, Inteligencia]", "En el Laboratorio 4", 0, 1, 1, 1));
+		listaReglas.add(setRules(17, "[DondeRindo, AnalisisMatematicoII]", "En el Aula 22", 0, 1, 1, 1));
+		listaReglas.add(setRules(18, "[DondeRindo, Redes]", "En el Laboratorio de Conectividad. 3er Piso", 0, 1, 1, 1));
+		listaReglas.add(setRules(19, "[DondeRindo, Ontologias]", "En el Aula MM5 (Multimedios 5)", 0, 1, 1, 1));
 		
-		r4.setId(4);
-		r4.setCondition("[como, llamar]");
-		r4.setThen("Agente 07. pium pium");
-		r4.setType(0);
-		r4.setNovelty(1);
-		r4.setPriority(1);
-		r4.setSpecificity(1);
-		listaReglas.add(r4);
+		listaReglas.add(setRules(20, "[DondeCurso, SistemasGestion]", "En el Laboratorio 2", 0, 1, 1, 1));
+		listaReglas.add(setRules(21, "[DondeCurso, Inteligencia]", "En el Aula E03", 0, 1, 1, 1));
+		listaReglas.add(setRules(22, "[DondeCurso, AnalisisMatematicoII]", "En el Aula 21", 0, 1, 1, 1));
+		listaReglas.add(setRules(23, "[DondeCurso, Redes]", "En el Aula 20", 0, 1, 1, 1));
+		listaReglas.add(setRules(24, "[DondeCurso, Ontologias]", "En el Aula MM5 (Multimedios 5)", 0, 1, 1, 1));
 		
-		r5.setId(5);
-		r5.setCondition("[hola, como, estar]");
-		r5.setThen("Hola! bien, en que puedo ayudar?");
-		r5.setType(0);
-		r5.setNovelty(1);
-		r5.setPriority(1);
-		r5.setSpecificity(1);
-		listaReglas.add(r5);
+		listaReglas.add(setRules(24, "[ComoTeLlamas]", "Mi nombre es Wall-E :) En que puedo ayudar?", 0, 1, 1, 1));
 		
-
+		listaReglas.add(setRules(24, "[Gracias]", "De nada, que tengas un buen día!", 0, 1, 1, 1));
 		
 	}
 
@@ -80,6 +58,19 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public Regla setRules (int id, String condition, String then, int type, int novelty, int priority, int specificity) {
+		// TODO Auto-generated method stub
+		Regla r = new Regla();
+		r.setId(id);
+		r.setCondition(condition);
+		r.setThen(then);
+		r.setType(type);
+		r.setNovelty(novelty);
+		r.setPriority(priority);
+		r.setSpecificity(specificity);
+		
+		return r;
 	}
 
 	public void update(AgentState ast, PeerRuleData rule) {
