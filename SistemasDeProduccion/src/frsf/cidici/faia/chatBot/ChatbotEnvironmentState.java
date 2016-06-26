@@ -21,6 +21,9 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 		respuestaAgente = "Benvenuto";	
 		
 		listaReglas.add(setRules(1, "[SaludoBienv]", "Hola, en que puedo ayudarlo?", 0, 1, 1, 1));
+		listaReglas.add(setRules(1, "[SaludoBienv]", "Hola", 0, 0, 0, 0));
+		
+		
 		listaReglas.add(setRules(2, "[SaludoDesp]", "Chau", 0, 1, 1, 1));
 		listaReglas.add(setRules(3, "[ComoAndar]", "Bárbaro y vos?", 0, 1, 1, 1));
 		listaReglas.add(setRules(4, "[SaludoBienv, ComoAndar]", "Hola! Bárbaro y vos?", 0, 1, 1, 1));
@@ -49,9 +52,10 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 		listaReglas.add(setRules(24, "[DondeCurso, Ontologias]", "En el Aula MM5 (Multimedios 5)", 0, 1, 1, 1));
 		
 		listaReglas.add(setRules(24, "[ComoTeLlamas]", "Mi nombre es Wall-E :) En que puedo ayudar?", 0, 1, 1, 1));
+		listaReglas.add(setRules(24, "[ComoLlegar, ]", "poner aca el algoritmo", 0, 1, 1, 1));
 		
 		listaReglas.add(setRules(24, "[Gracias]", "De nada, que tengas un buen día!", 0, 1, 1, 1));
-		
+		listaReglas.add(setRules(24, "[Bien]", "En que puedo ayudarlo?", 0, 1, 1, 1));
 	}
 
 	@Override

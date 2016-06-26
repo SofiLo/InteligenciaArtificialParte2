@@ -37,7 +37,7 @@ public class ChatbotProductionSystem extends ProductionSystem{
 			
 			if(perc==null) perc = " new Frase()";
 			PeerRuleData pdr = new PeerRuleData(i.next(),perc);
-			if(pdr.getData().equals(pdr.getRule().getCondition()))
+		//	if(pdr.getData().equals(pdr.getRule().getCondition()))
 				ret.add(pdr);
 		}
 	

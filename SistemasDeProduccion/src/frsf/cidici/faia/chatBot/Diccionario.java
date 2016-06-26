@@ -41,6 +41,8 @@ public class Diccionario {
 	ArrayList<String> Pastorelli = new ArrayList<String>();
 	ArrayList<String> Villarreal = new ArrayList<String>();
 	ArrayList<String> Gracias = new ArrayList<String>();
+	ArrayList<String> Bien = new ArrayList<String>();
+	ArrayList<String> ComoLlegar = new ArrayList<String>();
 	
 	String Como = "como";
 	String Cual = "cual";
@@ -225,6 +227,13 @@ public class Diccionario {
 		Pastorelli.add("soniapastorelli");
 		Pastorelli.add("sonia");
 		Pastorelli.add("pastorelli");
+		
+		Bien.add("bien");
+		Bien.add("barbaro");
+		Bien.add("genial");
+		Bien.add("muybien");
+		
+		ComoLlegar.add("");
 		
 //		
 //		Materias.add("sistemasdegestion");

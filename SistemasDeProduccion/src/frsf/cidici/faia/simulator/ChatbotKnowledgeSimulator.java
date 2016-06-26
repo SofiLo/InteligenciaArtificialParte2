@@ -49,7 +49,7 @@ public class ChatbotKnowledgeSimulator extends KnowledgeBasedAgentSimulator{
         else
         {
           	ProductionSystemAction act = (ProductionSystemAction) action;
-           //	System.out.println("\nRule to execute: " + act.getPeerRuleData().getRule().getId());
+           	System.out.println("\nRule to execute: " + act.getPeerRuleData().getRule().getId());
         }
         System.out.println();
 

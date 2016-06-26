@@ -10,8 +10,9 @@ public class Preprocess {
 		ArrayList<String> normalizada = new ArrayList<String>();
 		
 		String[] separada;
-		String aux;
-
+		if(cadena.split(" ").length > 1)
+			cadena = cadena.substring(0, cadena.indexOf("?")) + " "+ cadena.substring(cadena.indexOf("?"));
+		
 		separada = cadena.toLowerCase().split(" ");
 		
 		
@@ -79,6 +80,10 @@ public class Preprocess {
 				normalizada.add("ComoTeLlamas");
 			}if(dic.Gracias.contains(palabra)){
 				normalizada.add("Gracias");
+			}if(dic.Bien.contains(palabra)){
+				normalizada.add("Bien");
+			}if(dic.ComoLlegar.contains(palabra)){
+				normalizada.add("ComoLlegar");
 			}
 		}
 		//imprimenomas
@@ -253,7 +258,20 @@ public class Preprocess {
 					separada[i] = separada[i].concat(separada[i+1]);
 					separada[i+1]=" ";
 				}
-				
+				else if(separada[i].equals("como") && separada[i+1].equals("llego")){
+					separada[i] = separada[i].concat(separada[i+1]);
+					separada[i+1]=" ";
+				}
+				else if(separada[i].equals("como") && separada[i+1].equals("llegar")){
+					separada[i] = separada[i].concat(separada[i+1]);
+					separada[i+1]=" ";
+				}
+				else if(separada[i].equals("como") && separada[i+1].equals("se")
+						&& separada[i+1].equals("llega")){
+					separada[i] = separada[i].concat(separada[i+1]);
+					separada[i] = separada[i].concat(separada[i+2]);
+					separada[i+1]=" ";separada[i+2]=" ";
+				}
 			}	
 		}
 		
@@ -281,10 +299,13 @@ public class Preprocess {
 						((separada[i+1]).equals("tardes") || (separada[i+1]).equals("noches"))){
 					separada[i] = separada[i].concat(separada[i+1]);
 					separada[i+1]=" ";
-				}else if(separada.length!=1 && (separada[i].equals("buenos") && ((separada[i+1]).equals("dias")))){
+				}else if((separada[i].equals("buenos") && ((separada[i+1]).equals("dias")))){
 					separada[i] = separada[i].concat(separada[i+1]);
 					separada[i+1]=" ";
-				}else if(separada.length!=1 && separada[i].equals("buen") && (separada[i+1].equals("dia"))){
+				}else if(separada[i].equals("buen") && (separada[i+1].equals("dia"))){
+					separada[i] = separada[i].concat(separada[i+1]);
+					separada[i+1]=" ";
+				}else if(separada[i].equals("muy") && (separada[i+1].equals("bien"))){
 					separada[i] = separada[i].concat(separada[i+1]);
 					separada[i+1]=" ";
 				}
