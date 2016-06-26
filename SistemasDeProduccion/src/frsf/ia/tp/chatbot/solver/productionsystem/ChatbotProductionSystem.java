@@ -40,7 +40,7 @@ public class ChatbotProductionSystem extends ProductionSystem{
 			if(pdr.getData().equals(pdr.getRule().getCondition()))
 				ret.add(pdr);
 		}
-		System.out.println(ret);
+	
 		return ret;
 	}
 	

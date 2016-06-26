@@ -15,10 +15,14 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 	
 	Regla r1 = new Regla();
 	Regla r2 = new Regla();
+	Regla r3 = new Regla();
+	Regla r4 = new Regla();
+	Regla r5 = new Regla();
+	Regla r6 = new Regla();
 		
 	@Override
 	public void initState() {
-		// TODO Auto-generated method stub
+
 		conversacionProcesada = new ArrayList<String>();
 		listaReglas = new LinkedList<Regla>();
 		respuestaAgente = "Benvenuto";	
@@ -40,6 +44,36 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 		r2.setPriority(0);
 		r2.setSpecificity(0);
 		listaReglas.add(r2);
+		
+		r3.setId(3);
+		r3.setCondition("[como, estar]");
+		r3.setThen("Bárbaro y vos?");
+		r3.setType(0);
+		r3.setNovelty(1);
+		r3.setPriority(1);
+		r3.setSpecificity(1);
+		listaReglas.add(r3);
+		
+		r4.setId(4);
+		r4.setCondition("[como, llamar]");
+		r4.setThen("Agente 07. pium pium");
+		r4.setType(0);
+		r4.setNovelty(1);
+		r4.setPriority(1);
+		r4.setSpecificity(1);
+		listaReglas.add(r4);
+		
+		r5.setId(5);
+		r5.setCondition("[hola, como, estar]");
+		r5.setThen("Hola! bien, en que puedo ayudar?");
+		r5.setType(0);
+		r5.setNovelty(1);
+		r5.setPriority(1);
+		r5.setSpecificity(1);
+		listaReglas.add(r5);
+		
+
+		
 	}
 
 	@Override
@@ -62,6 +96,7 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 	}
 	
     public void setConversacion(ArrayList<String> conversacionProcesada){
+    	
     	ChatbotEnvironmentState.conversacionProcesada = conversacionProcesada;
     }
     

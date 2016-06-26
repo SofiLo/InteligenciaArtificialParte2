@@ -19,13 +19,14 @@ public class ChatbotInicial {
 		ChatbotEnvironmentState estadoAgente = new ChatbotEnvironmentState();
 		Preprocesamiento pre = new Preprocesamiento();
 				
-		System.out.println("Comenzar conversación aqui: ");
 		System.out.println();
 		InputStreamReader isr = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader (isr);
 		
 		//obtengo la conversacion ingresada por el usuario
-		String original = br.readLine();
+		do{
+			String original = br.readLine();
+		
 	
 		//se la mando al estado del agente
 		estadoAgente.setConversacion(pre.procesamiento(original));
@@ -42,5 +43,8 @@ public class ChatbotInicial {
 		/*accion.execute(ChatbotInicial.chatbot.getAgentState(), estadoAgente);
 		System.out.println();
 		System.out.println(">>"+ estadoAgente.respuestaAgente);	*/
+		}while(estadoAgente.respuestaAgente != "Chau");
+		
+		System.out.println("salio del dowhile");
 	}
 }

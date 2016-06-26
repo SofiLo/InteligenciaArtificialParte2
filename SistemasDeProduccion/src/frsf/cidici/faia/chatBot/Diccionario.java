@@ -96,6 +96,7 @@ public class Diccionario {
 		
 		SaludoBienv.add("hola");
 		SaludoBienv.add("buenas");
+		SaludoBienv.add("buenos");
 		SaludoBienv.add("buen");
 		
 		SaludoDesp.add("chau");

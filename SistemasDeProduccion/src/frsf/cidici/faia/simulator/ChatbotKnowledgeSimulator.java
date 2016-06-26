@@ -19,10 +19,10 @@ public class ChatbotKnowledgeSimulator extends KnowledgeBasedAgentSimulator{
 	@Override
 	public void start() {
 
-        System.out.println("----------------------------------------------------");
+     /*   System.out.println("----------------------------------------------------");
         System.out.println("--- " + this.getSimulatorName() + " ---");
         System.out.println("----------------------------------------------------");
-        System.out.println();
+        System.out.println();*/
 
         Perception perception;
         Action action;
@@ -31,16 +31,16 @@ public class ChatbotKnowledgeSimulator extends KnowledgeBasedAgentSimulator{
 
         agent = (ChatbotAgent) this.getAgents().firstElement();
 
-        System.out.println("------------------------------------");
+  /*      System.out.println("------------------------------------");
 
-        System.out.println("Sending perception to agent...");
+        System.out.println("Sending perception to agent...");*/
         perception = this.getPercept();
         //agent.see(perception);
-        System.out.println("Perception: " + perception);
+   /*     System.out.println("Perception: " + perception);
 
          //   System.out.println("Agent State: " + agent.getAgentState());
            // System.out.println("Environment: " + environment);
-        System.out.println("Asking the agent that start the learning process...");
+        System.out.println("Asking the agent that start the learning process...");*/
         action = agent.learn();
 
         if (action == null){
@@ -49,7 +49,7 @@ public class ChatbotKnowledgeSimulator extends KnowledgeBasedAgentSimulator{
         else
         {
           	ProductionSystemAction act = (ProductionSystemAction) action;
-           	System.out.println("\nRule to execute: " + act.getPeerRuleData().getRule().getId());
+           //	System.out.println("\nRule to execute: " + act.getPeerRuleData().getRule().getId());
         }
         System.out.println();
 
