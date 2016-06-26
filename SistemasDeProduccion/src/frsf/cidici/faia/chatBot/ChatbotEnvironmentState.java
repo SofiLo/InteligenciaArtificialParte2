@@ -5,8 +5,10 @@ import java.util.LinkedList;
 
 import frsf.cidici.faia.chatBot.ui.Messenger;
 import frsf.cidici.faia.solver.productionsystem.PeerRuleData;
+import frsf.cidisi.faia.exceptions.PrologConnectorException;
 import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
+import frsf.cidisi.exercise.diagrama.search.*;
 
 public class ChatbotEnvironmentState extends EnvironmentState {
 	
@@ -53,7 +55,9 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 		listaReglas.add(setRules(24, "[DondeCurso, Ontologias]", "En el Aula MM5 (Multimedios 5)", 0, 1, 1, 1));
 		
 		listaReglas.add(setRules(24, "[ComoTeLlamas]", "Mi nombre es Wall-E :) En que puedo ayudar?", 0, 1, 1, 1));
-	//	listaReglas.add(setRules(24, "[ComoLlegar, ]", "poner aca el algoritmo", 0, 1, 1, 1));
+		
+		
+		listaReglas.add(setRules(24, "[ComoLlegar]", "Debes seguir las instrucciones indicadas. ", 0, 1, 1, 1));
 		
 		listaReglas.add(setRules(24, "[Gracias]", "De nada, que tengas un buen día!", 0, 1, 1, 1));
 		listaReglas.add(setRules(24, "[Bien]", "En que puedo ayudarlo?", 0, 1, 1, 1));

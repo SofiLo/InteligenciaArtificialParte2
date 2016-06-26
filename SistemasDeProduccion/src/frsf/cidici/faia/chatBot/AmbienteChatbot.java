@@ -13,6 +13,7 @@ public class AmbienteChatbot extends Environment {
 		// Create the chatbot environment state
 		environmentState = new ChatbotEnvironmentState();
 		environmentState.initState();
+		
 	}
 	
 	@Override

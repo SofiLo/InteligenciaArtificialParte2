@@ -20,6 +20,12 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import frsf.cidici.faia.chatBot.ChatbotInicial;
+import frsf.cidisi.exercise.diagrama.search.Agente;
+import frsf.cidisi.exercise.diagrama.search.Ambiente;
+import frsf.cidisi.exercise.diagrama.search.EstadoAgente;
+import frsf.cidisi.exercise.diagrama.search.EstadoAmbiente;
+import frsf.cidisi.exercise.diagrama.search.SearchExtendido;
+import frsf.cidisi.faia.solver.search.BreathFirstSearch;
 
 public class Messenger {
 	/**
@@ -119,15 +125,16 @@ public class Messenger {
 							+ escribo.getText();
 
 					escribe.setText(escribe.getText() + "\n" + respuesta);
-					
+
 					frame.repaint();
-					
+
 					ChatbotInicial.inicio(escribo.getText());
+
+					escribo.setText("");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-
 			}
 		});
 		c.gridwidth = 1;
@@ -163,14 +170,32 @@ public class Messenger {
 
 	public static void respuesta(String respuesta) {
 
-//		try {
-//			Thread.sleep(1500);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		// try {
+		// Thread.sleep(1500);
+		// } catch (InterruptedException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
 		respuesta = Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + ":" + Calendar.getInstance().get(Calendar.MINUTE)
 				+ ": " + "Wall-e dice: \n" + respuesta;
 		escribe.setText(escribe.getText() + "\n" + respuesta);
+	}
+
+	public static void conexionViejo(String fin) {
+		Agente agent = new Agente();
+		Ambiente environment = new Ambiente();
+		SearchExtendido simulator = new SearchExtendido(environment, agent);
+		
+		((EstadoAgente) agent.getAgentState()).setNodoDestinoNombre(fin.trim());
+		((EstadoAmbiente) ((Ambiente) environment).getEnvironmentState()).setPosicionAgenteNombre("Mastil");
+
+		agent.setEstrategia(new BreathFirstSearch());
+		simulator.start();
+
+		String test = Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + ":"
+				+ Calendar.getInstance().get(Calendar.MINUTE) + ": " + "Wall-e dice: \n"
+				+ SearchExtendido.getInstrucciones();
+
+		escribe.setText(test);
 	}
 }

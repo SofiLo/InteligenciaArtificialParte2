@@ -45,6 +45,7 @@ public class ProductionSystem extends Solve{
         	{
         		Criteria actualCriteria = i.next();
         		System.out.println("\nCriterio:" + actualCriteria.toString());
+        		
         		LinkedList<PeerRuleData> finalRules = actualCriteria.apply(activeRules);
         		if(finalRules.size()==0) System.out.print("Reglas en Conflicto: -");
         		else

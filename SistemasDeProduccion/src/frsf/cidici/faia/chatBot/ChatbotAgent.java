@@ -15,7 +15,7 @@ import frsf.cidisi.faia.state.AgentState;
 import frsf.ia.tp.chatbot.solver.productionsystem.ChatbotProductionSystem;
 
 public class ChatbotAgent extends Agente {
-	
+
 	AgentState state;
 
 	Priority prioridad = new Priority();

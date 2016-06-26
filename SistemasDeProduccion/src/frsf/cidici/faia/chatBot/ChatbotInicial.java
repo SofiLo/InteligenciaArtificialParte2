@@ -7,6 +7,8 @@ import frsf.cidici.faia.simulator.ChatbotKnowledgeSimulator;
 
 public class ChatbotInicial {
 
+	public Util util = new Util();
+	
 	public static void inicio(String oracion) {
 		
 		ChatbotAgent agente = new ChatbotAgent();
