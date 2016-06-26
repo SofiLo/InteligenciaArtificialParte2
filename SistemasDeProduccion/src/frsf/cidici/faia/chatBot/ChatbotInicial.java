@@ -17,7 +17,7 @@ public class ChatbotInicial {
 		ChatbotAgent agente = new ChatbotAgent();
 		AmbienteChatbot ambienteAgente = new AmbienteChatbot();
 		ChatbotEnvironmentState estadoAgente = new ChatbotEnvironmentState();
-		Preprocesamiento pre = new Preprocesamiento();
+		Preprocess pre = new Preprocess();
 				
 		System.out.println();
 		InputStreamReader isr = new InputStreamReader(System.in);
@@ -29,7 +29,7 @@ public class ChatbotInicial {
 		
 	
 		//se la mando al estado del agente
-		estadoAgente.setConversacion(pre.procesamiento(original));
+		estadoAgente.setConversacion(pre.procesar(original));
 		
 		//seteo el estado del agente al ambiente
 		ambienteAgente.setEnvironmentState(estadoAgente);
