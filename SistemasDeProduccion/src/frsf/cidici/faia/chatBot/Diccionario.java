@@ -182,8 +182,8 @@ public class Diccionario {
 		
 		Redes.add("redes");
 		
-		Milagros.add("mialgrosgutierrez");
-		Milagros.add("mialgros");
+		Milagros.add("milagrosgutierrez");
+		Milagros.add("milagros");
 		Milagros.add("gutierrez");
 		
 		Susana.add("susanaromaniz");
@@ -233,7 +233,11 @@ public class Diccionario {
 		Bien.add("genial");
 		Bien.add("muybien");
 		
-		ComoLlegar.add("");
+		ComoLlegar.add("comollego");
+		ComoLlegar.add("comollegar");
+		ComoLlegar.add("dondevoy");
+		ComoLlegar.add("quieroir");
+		ComoLlegar.add("comosellega");
 		
 //		
 //		Materias.add("sistemasdegestion");

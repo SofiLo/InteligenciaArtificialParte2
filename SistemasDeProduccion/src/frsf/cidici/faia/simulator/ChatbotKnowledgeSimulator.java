@@ -1,6 +1,7 @@
 package frsf.cidici.faia.simulator;
 
 import frsf.cidici.faia.chatBot.ChatbotAgent;
+import frsf.cidici.faia.chatBot.ui.Messenger;
 import frsf.cidici.faia.solver.productionsystem.ProductionSystemAction;
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.agent.Agent;
@@ -44,7 +45,8 @@ public class ChatbotKnowledgeSimulator extends KnowledgeBasedAgentSimulator{
         action = agent.learn();
 
         if (action == null){
-         	System.out.println("\nNo entiendo.");
+        	Messenger.respuesta("No entiendo wachin");
+//         	System.out.println("\nNo entiendo.");
         }
         else
         {

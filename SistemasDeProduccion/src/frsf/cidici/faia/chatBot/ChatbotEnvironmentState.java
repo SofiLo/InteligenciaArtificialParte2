@@ -3,6 +3,7 @@ package frsf.cidici.faia.chatBot;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import frsf.cidici.faia.chatBot.ui.Messenger;
 import frsf.cidici.faia.solver.productionsystem.PeerRuleData;
 import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
@@ -52,7 +53,7 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 		listaReglas.add(setRules(24, "[DondeCurso, Ontologias]", "En el Aula MM5 (Multimedios 5)", 0, 1, 1, 1));
 		
 		listaReglas.add(setRules(24, "[ComoTeLlamas]", "Mi nombre es Wall-E :) En que puedo ayudar?", 0, 1, 1, 1));
-		listaReglas.add(setRules(24, "[ComoLlegar, ]", "poner aca el algoritmo", 0, 1, 1, 1));
+	//	listaReglas.add(setRules(24, "[ComoLlegar, ]", "poner aca el algoritmo", 0, 1, 1, 1));
 		
 		listaReglas.add(setRules(24, "[Gracias]", "De nada, que tengas un buen día!", 0, 1, 1, 1));
 		listaReglas.add(setRules(24, "[Bien]", "En que puedo ayudarlo?", 0, 1, 1, 1));
@@ -82,7 +83,8 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 		respuestaAgente = rule.getRule().getThen();
 		
 		
-		System.out.println(">> "+respuestaAgente);
+//		System.out.println(">> "+respuestaAgente);
+		Messenger.respuesta(respuestaAgente);
 	}
 
 	public ArrayList<String> getConversacion() {

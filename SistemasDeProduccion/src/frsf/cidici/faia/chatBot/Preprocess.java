@@ -271,6 +271,12 @@ public class Preprocess {
 					separada[i] = separada[i].concat(separada[i+1]);
 					separada[i] = separada[i].concat(separada[i+2]);
 					separada[i+1]=" ";separada[i+2]=" ";
+				}else if(separada[i].equals("quiero") && separada[i+1].equals("ir")){
+					separada[i] = separada[i].concat(separada[i+1]);
+					separada[i+1]=" ";
+				}else if(separada[i].equals("donde") && separada[i+1].equals("voy")){
+					separada[i] = separada[i].concat(separada[i+1]);
+					separada[i+1]=" ";
 				}
 			}	
 		}

@@ -2,18 +2,13 @@ package frsf.cidici.faia.chatBot;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 import frsf.cidici.faia.simulator.ChatbotKnowledgeSimulator;
-import frsf.cidici.faia.simulator.KnowledgeBasedAgentSimulator;
-import frsf.cidisi.faia.agent.Action;
-import frsf.cidisi.faia.environment.Environment;
 
 public class ChatbotInicial {
 
-	public static void main(String[] args) throws Exception{
+	public static void inicio(String oracion) {
 		
-		//-----------------------------Simulador---------------------------------------
 		ChatbotAgent agente = new ChatbotAgent();
 		AmbienteChatbot ambienteAgente = new AmbienteChatbot();
 		ChatbotEnvironmentState estadoAgente = new ChatbotEnvironmentState();
@@ -25,7 +20,14 @@ public class ChatbotInicial {
 		
 		//obtengo la conversacion ingresada por el usuario
 		do{
-			String original = br.readLine();
+			
+			String original = oracion;
+//			try {
+//				original = br.readLine();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 		
 	
 		//se la mando al estado del agente
@@ -38,13 +40,12 @@ public class ChatbotInicial {
 		ChatbotKnowledgeSimulator simulador = new ChatbotKnowledgeSimulator(ambienteAgente, agente);
 		simulador.start();
 
-		//----------------------------------------------------------------------------
 			
 		/*accion.execute(ChatbotInicial.chatbot.getAgentState(), estadoAgente);
 		System.out.println();
 		System.out.println(">>"+ estadoAgente.respuestaAgente);	*/
-		}while(estadoAgente.respuestaAgente != "Chau");
+		}while(false);
 		
-		System.out.println("salio del dowhile");
+//		System.out.println("salio del dowhile");
 	}
 }
