@@ -46,14 +46,14 @@ public class ChatbotKnowledgeSimulator extends KnowledgeBasedAgentSimulator{
         action = agent.learn();
 
         if (action == null){
-        	Messenger.respuesta("No entiendo");
+        	Messenger.respuesta("No entiendo. Por favor formula nuevamente la pregunta.");
 //         	System.out.println("\nNo entiendo.");
         }
         else
         {
           	ProductionSystemAction act = (ProductionSystemAction) action;
            	System.out.println("\nRule to execute: " + act.getPeerRuleData().getRule().getId());
-           	ChatbotInicial.util.escribir("\nRule to execute: \n" + act.getPeerRuleData().getRule().getId());
+           	ChatbotInicial.util.escribir("\nRule to execute: " + act.getPeerRuleData().getRule().getId());
         }
         System.out.println();
 
