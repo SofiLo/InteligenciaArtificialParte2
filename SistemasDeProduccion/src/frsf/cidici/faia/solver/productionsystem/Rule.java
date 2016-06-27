@@ -76,8 +76,11 @@ public abstract class Rule {
 	}
 	
 	public String getThen(){
-		if(then.equals("algoritmo"))
-			return "Debe seguir el siguiente camino: \n" + Messenger.test + "\n y llegará a "+ Preprocess.destinoChat;
+		if(then.equals("algoritmo")){
+			String destino = Preprocess.destinoChat;
+			Preprocess.destinoChat = "";
+			return "Debe seguir el siguiente camino: \n" + Messenger.test + "\n y llegará a "+ destino;
+		}
 		else
 			return then;
 	}

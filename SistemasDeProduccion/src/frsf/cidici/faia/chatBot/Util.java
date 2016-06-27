@@ -13,7 +13,7 @@ public class Util {
 	FileWriter fw;
 	
 	public Util(){
-		ruta = "C:\\Users\\Sofía\\Desktop\\log.txt";
+		ruta = "C:\\Users\\Evelyn\\Desktop\\log.txt";
 		archivo = new File(ruta);
 
 	}

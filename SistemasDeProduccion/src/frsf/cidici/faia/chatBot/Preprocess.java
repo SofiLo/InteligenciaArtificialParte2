@@ -15,6 +15,18 @@ public class Preprocess {
 		ArrayList<String> normalizada = new ArrayList<String>();
 
 		String[] separada;
+		if(cadena.contains("?")){
+			cadena = cadena.substring(0, cadena.indexOf("?")) + " " + cadena.substring(cadena.indexOf("?"));
+		}
+		else if(cadena.contains(",")){
+			cadena = cadena.substring(0, cadena.indexOf(",")) + " " + cadena.substring(cadena.indexOf(","));
+		}
+		else if(cadena.contains(".")){
+			cadena = cadena.substring(0, cadena.indexOf(".")) + " " + cadena.substring(cadena.indexOf("."));
+		}
+		else if(cadena.contains("!")){
+			cadena = cadena.substring(0, cadena.indexOf("!")) + " " + cadena.substring(cadena.indexOf("!"));
+		}
 //		if (cadena.split(" ").length > 1)
 //			cadena = cadena.substring(0, cadena.indexOf("?")) + " " + cadena.substring(cadena.indexOf("?"));
 
