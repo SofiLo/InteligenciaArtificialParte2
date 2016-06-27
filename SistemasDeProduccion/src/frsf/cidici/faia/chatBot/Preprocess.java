@@ -15,8 +15,8 @@ public class Preprocess {
 		ArrayList<String> normalizada = new ArrayList<String>();
 
 		String[] separada;
-		if (cadena.split(" ").length > 1)
-			cadena = cadena.substring(0, cadena.indexOf("?")) + " " + cadena.substring(cadena.indexOf("?"));
+//		if (cadena.split(" ").length > 1)
+//			cadena = cadena.substring(0, cadena.indexOf("?")) + " " + cadena.substring(cadena.indexOf("?"));
 
 		separada = cadena.toLowerCase().split(" ");
 

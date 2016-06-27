@@ -54,13 +54,13 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 		listaReglas.add(setRules(23, "[DondeCurso, Redes]", "En el Aula 20", 0, 1, 1, 1));
 		listaReglas.add(setRules(24, "[DondeCurso, Ontologias]", "En el Aula MM5 (Multimedios 5)", 0, 1, 1, 1));
 		
-		listaReglas.add(setRules(24, "[ComoTeLlamas]", "Mi nombre es Wall-E :) En que puedo ayudar?", 0, 1, 1, 1));
+		listaReglas.add(setRules(25, "[ComoTeLlamas]", "Mi nombre es Wall-E :) En que puedo ayudar?", 0, 1, 1, 1));
 		
 		
-		listaReglas.add(setRules(24, "[ComoLlegar]", "Debes seguir las instrucciones indicadas. ", 0, 1, 1, 1));
+		listaReglas.add(setRules(26, "[ComoLlegar]", "algoritmo", 0, 1, 1, 1));
 		
-		listaReglas.add(setRules(24, "[Gracias]", "De nada, que tengas un buen día!", 0, 1, 1, 1));
-		listaReglas.add(setRules(24, "[Bien]", "En que puedo ayudarlo?", 0, 1, 1, 1));
+		listaReglas.add(setRules(27, "[Gracias]", "De nada, que tengas un buen día!", 0, 1, 1, 1));
+		listaReglas.add(setRules(28, "[Bien]", "En que puedo ayudarlo?", 0, 1, 1, 1));
 	}
 
 	@Override
@@ -85,9 +85,7 @@ public class ChatbotEnvironmentState extends EnvironmentState {
 	public void update(AgentState ast, PeerRuleData rule) {
 		// TODO Auto-generated method stub
 		respuestaAgente = rule.getRule().getThen();
-		
-		
-//		System.out.println(">> "+respuestaAgente);
+
 		Messenger.respuesta(respuestaAgente);
 	}
 

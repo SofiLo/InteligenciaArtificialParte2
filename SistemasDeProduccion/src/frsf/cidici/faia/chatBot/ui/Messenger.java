@@ -25,6 +25,7 @@ import frsf.cidisi.exercise.diagrama.search.Ambiente;
 import frsf.cidisi.exercise.diagrama.search.EstadoAgente;
 import frsf.cidisi.exercise.diagrama.search.EstadoAmbiente;
 import frsf.cidisi.exercise.diagrama.search.SearchExtendido;
+//import frsf.cidisi.faia.solver.search.BreathFirstSearch;
 import frsf.cidisi.faia.solver.search.BreathFirstSearch;
 
 public class Messenger {
@@ -34,6 +35,7 @@ public class Messenger {
 	 */
 	private final static JTextArea escribe = new JTextArea();
 	final static JLabel info = new JLabel();
+	public static String test;
 
 	private static void createAndShowGUI() {
 		// Create and set up the window.
@@ -192,10 +194,11 @@ public class Messenger {
 		agent.setEstrategia(new BreathFirstSearch());
 		simulator.start();
 
-		String test = Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + ":"
-				+ Calendar.getInstance().get(Calendar.MINUTE) + ": " + "Wall-e dice: \n"
-				+ SearchExtendido.getInstrucciones();
+		test = SearchExtendido.getInstrucciones();
+//		String test = Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + ":"
+//				+ Calendar.getInstance().get(Calendar.MINUTE) + ": " + "Wall-e dice: \n"
+//				+ SearchExtendido.getInstrucciones();
 
-		escribe.setText(test);
+		//escribe.setText(test);
 	}
 }

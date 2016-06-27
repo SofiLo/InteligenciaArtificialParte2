@@ -3,6 +3,7 @@ package frsf.cidici.faia.solver.productionsystem;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+import frsf.cidici.faia.chatBot.ChatbotInicial;
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.solver.Solve;
 
@@ -46,14 +47,24 @@ public class ProductionSystem extends Solve{
         		Criteria actualCriteria = i.next();
         		System.out.println("\nCriterio:" + actualCriteria.toString());
         		
+        		//escribo en el archivo
+        		ChatbotInicial.util.escribir("\nCriterio:" + actualCriteria.toString());
+        		
         		LinkedList<PeerRuleData> finalRules = actualCriteria.apply(activeRules);
-        		if(finalRules.size()==0) System.out.print("Reglas en Conflicto: -");
+        		if(finalRules.size()==0){
+        			System.out.print("Reglas en Conflicto: -");
+        			//escribo en el archivo
+            		ChatbotInicial.util.escribir("Reglas en Conflicto: -");
+        		}
         		else
         		{
         			System.out.print("Reglas en Conflicto: ");
+        			ChatbotInicial.util.escribir("Reglas en Conflicto: ");
                 	for(Iterator<PeerRuleData> j = finalRules.iterator(); j.hasNext();)
                 	{
-                		System.out.print("(R" + j.next().getRule().getId().toString() + ") ");
+                		
+//                		System.out.print("(R" + j.next().getRule().getId().toString() + ") ");
+                		ChatbotInicial.util.escribir("(R" + j.next().getRule().getId().toString() + ") ");
                 	}
         			activeRules = finalRules;
         			if(activeRules.size()==1) break;

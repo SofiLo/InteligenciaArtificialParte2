@@ -1,5 +1,9 @@
 package frsf.cidici.faia.solver.productionsystem;
 
+import frsf.cidici.faia.chatBot.Preprocess;
+import frsf.cidici.faia.chatBot.ui.Messenger;
+import frsf.cidisi.exercise.diagrama.search.SearchExtendido;
+
 /**
  * Clase que modela elas reglas del sistema de produccion.
  * @author Grupo 12: Blas,María Julia / Diaz Ferreyra,Nicolas/ Sarli, Juan Leonardo.
@@ -72,7 +76,10 @@ public abstract class Rule {
 	}
 	
 	public String getThen(){
-		return then;
+		if(then.equals("algoritmo"))
+			return "Debe seguir el siguiente camino: \n" + Messenger.test + "\n y llegará a "+ Preprocess.destinoChat;
+		else
+			return then;
 	}
 	
 	public boolean equals(Rule aRule){		
